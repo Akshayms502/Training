@@ -1,7 +1,11 @@
 package day24;
 
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -36,14 +40,30 @@ public class DragonClient {
 				}
 				);
 		
+		
+		System.out.println("============================================");
+		
 		Double ls=dragon.stream().collect(Collectors.averagingInt(Dragon::getCount));
 		System.out.println(ls);
+		IntSummaryStatistics s=dragon.stream().collect(Collectors.summarizingInt(Dragon::getCount));
+	 //int ls1=dragon.stream().collect(Collectors.maxBy(Comparator.comparing(Dragons::get)));
+		System.out.println(s.getMax());
+		System.out.println(s.getMin());
+		System.out.println(s.getSum());
+		System.out.println(s.getAverage());
 		
-		int ls1=dragon.stream().collect(Collectors.maxBy());
+//	=	dragon.stream().collect(Collectors.maxBy(Dragon::getCount));
+		
+		
+		IntSummaryStatistics s1=(IntSummaryStatistics) dragon.stream().mapToInt((x)->x.getCount());
+		System.out.println(s1.getMax());
+		
+	//	Set<String> nam=dragon.stream().collect(Collectors.) 
+		
 		
 		//todo
-		//write java 8 snippet to find the stats of the dragonlist
-		//should display sum/avg/min/max/ of dragons
+		//write java 8 snippet to find the stats of the dragonlist should display sum/avg/min/max/ of dragons
+	
 		//find the dragons by country and keep the names of dragons of different countries in the list/set
 		//
 	}
