@@ -7,8 +7,6 @@ public class StarView {
 		System.out.println(" employee id"+emp.getEmpId());
 		System.out.println("employee name"+emp.getEmpName());
 		System.out.println("***********************************************");
-		
-		
 	}
 
 }
