@@ -2,7 +2,7 @@ package SingletonPatternDay3;
 
 import java.io.Serializable;
 
-//eeager singleton
+//eager singleton
 public class Singleton implements Serializable{
 	
 	
